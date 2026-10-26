@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "distributional-reduction"
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = {text = "MIT"}
+authors = [
+    {name = "Hugues Van Assel"},
+    {name = "Cédric Vincent-Cuaz"},
+    {name = "Nicolas Courty"},
+    {name = "Rémi Flamary"},
+    {name = "Pascal Frossard"},
+    {name = "Titouan Vayer"}
+]
+dependencies = [
+    "numpy",
+    "torch",
+    "matplotlib",
+    "tqdm",
+    "pillow",
+    "scikit-learn",
+    "geoopt",
+    "pot>=0.9.6.post1,<0.10.0",
+    "networkx",
+    "ipykernel (>=7.1.0,<8.0.0)",
+    "botorch (>=0.16.1,<0.17.0)",
+    "ipywidgets (>=8.1.8,<9.0.0)",
+    "torchvision (>=0.25.0,<0.26.0)",
+    "pandas (>=3.0.1,<4.0.0)",
+    "xlrd (>=2.0.2,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "torchmetrics (>=1.9.0,<2.0.0)",
+    "scanpy (>=1.12,<2.0)",
+    "umap-learn (>=0.5.12,<0.6.0)",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "flake8",
+]
+
+[tool.setuptools]
+packages = ["src", "local_ot"]
+
+[tool.black]
+line-length = 100
+target-version = ['py37']
